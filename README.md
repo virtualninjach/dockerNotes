@@ -64,3 +64,8 @@ docker save verse_gapminder > verse_gapminder.tar
 If we want to load that Docker container from the archived tar file in the future, we can use the docker load command:
 
 docker load --input verse_gapminder.tar
+
+Getting the IP Address of a Running Container
+docker inspect <containerNameOrId> | grep '"IPAddress"' | head -n 1
+  
+
