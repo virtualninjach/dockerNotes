@@ -69,6 +69,19 @@ Getting the IP Address of a Running Container
 docker inspect <containerNameOrId> | grep '"IPAddress"' | head -n 1
   
 <h2>Sample Docker File</h2>
+from microsoft/dotnet:latest
+copy ./app
+WORKDIR /app
+
+RUN dotnet restore
+RUN dotnet build
+
+EXPOSE 5000/tcp
+ENV ASPNETCORE_URLS http://*:5000
+ENV ASPNETCORE_ENVIRONMENT docker
+
+ENTRYPOINT dotnet run
+
 
 
   
