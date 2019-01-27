@@ -68,4 +68,8 @@ docker load --input verse_gapminder.tar
 Getting the IP Address of a Running Container
 docker inspect <containerNameOrId> | grep '"IPAddress"' | head -n 1
   
+<h2>Sample Docker File</h2>
+
+
+  
 
