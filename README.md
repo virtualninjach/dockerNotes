@@ -85,5 +85,12 @@ ENTRYPOINT dotnet run
 <h2>SQL Server Container</h2>
 docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=MyPassword001" -p 1433:1433 --name sqlserver-test -d mcr.microsoft.com/mssql/server:2017-latest
 
+docker container exec -it sqlserver-test bash
+
+/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P MyPassword001
+
+1> USE master
+2> GO
+
   
 
